@@ -1,0 +1,186 @@
+.main-list {
+    margin: 35px 25px;
+  }
+  .main-slist {
+    margin: 0 20%;
+  }
+  .main-flist {
+    
+    height: 750px;
+    margin-bottom: 0;
+    margin: 0 14%;
+  }
+
+  .component-flight-card {
+   
+   
+    padding-top: 25px;
+    background-color: #FFFFFF;
+    opacity: 0.7;
+    transition: 0.2s;
+   
+  }
+  
+  .component-fflight-card {
+    background: linear-gradient(
+      rgba(0, 0, 0, 0.3),
+      rgba(0, 0, 0, 0.3)
+      
+    ), 
+    url("../../resources/images/map.jpg");
+   
+    padding-top: 25px;
+    background-color: #FFFFFF;
+    opacity: 0.7;
+    transition: 0.2s;
+    position: relative;
+   
+  }
+  
+  .component-flight-card {
+    position: relative;
+  }
+  
+  .flight-card-price {
+    right: 0;
+    bottom: 0;
+    position: absolute;
+    margin: 25px 10px;
+
+  }
+  
+  .flight-card-company,
+  .flight-card-length {
+    font-size: 13px;
+    color: #676464;
+  }
+  
+  .flight-card-flength {
+    
+    color: #FFFFFF;
+  }
+  
+  .flight-list-header {
+    background-color: #FFFFFF;
+    padding: 15px;
+  }
+  
+  .component-flight-card .row .component-fflight-card  {
+    display: block;
+  }
+  
+  .component-flight-card .flight-card-reviews .component-fflight-card{
+    font-size: 13px;
+    display: none;
+  }
+  
+  .flight-card-filter {
+    display: block;
+  }
+  
+  .filter-and-sort-header {
+    display: none;
+  }
+  
+  .filter-and-sort-form {
+    display: none;
+  }
+  
+  .filter-and-sort-form .form-check {
+    font-size: 13px;
+  }
+  
+  .component-flight-card:hover {
+    opacity: 1.0;
+    transition: 0.2s;
+  }
+  .component-fflight-card:hover {
+    opacity: 1.0;
+    transition: 0.2s;
+  }
+  
+  
+  @media only screen and (min-width: 319px) {
+    .component-flight-card .component-fflight-card .flight-card-reviews {
+      width: 75%;
+      margin-bottom: 10px;
+    }
+  }
+  
+  @media only screen and (min-width: 408px) {
+    .component-flight-card .row  .component-fflight-card  {
+      display: flex;
+    }
+    
+    
+    
+    .component-flight-card  .component-fflight-card .flight-card-length .flight-card-flength {
+      font-size: 16px;
+      
+    }
+    
+
+    .flight-card-slength
+    {
+      margin : 0 35%;
+    }
+  }
+  
+  @media only screen and (min-width: 768px) {
+    .filter-and-sort-form {
+      display: block;
+    }
+    
+    .filter-and-sort-header {
+    display: block;
+  }
+    
+    .filter-and-sort-button {
+      display: none;
+    }
+  }
+  
+  @media only screen and (min-width: 1023px) {
+    .component-flight-list {
+      margin: 0 80px;
+    }
+  }
+  
+  @media only screen and (min-width: 1025px) {
+    .component-flight-list {
+      margin: 0 200px;
+    }
+    
+    .flight-card-filter {
+      display: block;
+    }
+  }
+  
+  @media only screen and (min-width: 1500px) {
+    .component-flight-list {
+      margin: 0 400px;
+    }
+    
+    .flight-card-filter {
+      display: block;
+    }
+  }
+
+  .vertical 
+  {
+    border-left : 3px dotted black;
+    height: 310px;
+    position: absolute;
+    left : 67%;
+  }
+
+  @media print{
+
+   
+    .hide-on-print{
+
+      display: none;
+    }
+    
+
+  }

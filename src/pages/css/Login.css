@@ -1,0 +1,25 @@
+.Logo
+{
+    padding : 0;
+width : 30%;
+margin : 40% 33% 5% ;
+font-size : 0;
+display : inline-block;
+}
+.Logo img
+{
+    display : block;
+    width : 100%;
+
+}
+
+.Container
+{
+  background-image: url("../../resources/images/pexels-andrea-piacquadio-3769120.jpg"); 
+  height: 100vh; 
+  background-position: center;  
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+
+}

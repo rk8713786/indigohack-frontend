@@ -1,0 +1,211 @@
+.Nav
+{
+    position : fixed ;
+top : 0;
+left : 0;
+right : 0;
+bottom : 10px;
+height : 50px;
+background-color : #FFA900;
+display : flex;
+justify-content : space-between;
+align-items : center;
+padding : 0 10px;
+letter-spacing : 16px;
+z-index : 3;
+color : white;
+margin-bottom : 100px;
+
+}
+
+.Logo
+{
+    padding : 0;
+width : 110px;
+margin-top : 1px;
+max-height : 250px;
+font-size : 0;
+display : inline-block;
+
+
+
+}
+
+.Logo img
+{
+    display : block;
+    width : 100%;
+    
+}
+.NavMenu
+{
+align-items : center;
+display : flex;
+flex-flow : row nowrap;
+height : 100%;
+justify-content : flex-end;
+margin : 0px;
+padding : 0px;
+position : relative;
+margin-right : auto;
+margin-left : 25px;
+
+@media (max-width :768px)
+{
+    display : none;
+}
+}
+
+.NavMenu a
+{
+    display : flex;
+    padding : 0 12px;
+    align-items : center;
+    text-decoration : none;
+}
+
+.NavMenu a img{
+        height : 20px;
+        min-width : 20px;
+        width : 20px;
+        z-index : auto;
+
+    }
+
+
+  .NavMenu  a span{
+        color : rgb(249,249,249);
+        font-size :11px;
+        letter-spacing : 1.42px;
+        line-height : 1.08;
+        padding : 2px 4px;
+        position : relative;
+
+        white-space : nowrap;
+
+  }
+
+  .NavMenu  a span::before 
+    {
+        content : "";
+        background-color : rgb(249,249,249);
+        display : block;
+        border-radius : 0 0 4px 4px;
+        bottom :-6px;
+        left : 0px;
+        height : 2px;
+        opacity : 0;
+        position : absolute;
+        right : 0px;
+        transform-origin : left center;
+        transform : scaleX(0);
+        transition : all 250ms cubic-bezier(0.25,0.46,0.45,0.94) 0s;
+        visibility : hidden;
+
+    }
+
+
+
+    .NavMenu  a span:hover::before{
+            transform : scaleX(1);
+            visibility:visible;
+            opacity : 1 !important;
+        }
+    
+
+
+
+
+.Login
+{
+    letter-spacing : 1.4px;
+color : rgb(249,249,249);
+text-transform : uppercase;
+border : 1px solid #f9f9f9;
+border-radius : 4px;
+padding : 6px 12px;
+cursor : pointer;
+transition : all 0.2 ease 0s;
+margin : 0 10px;
+
+}
+
+.Login:hover
+{
+    
+    background-color : rgb(249,249,249);
+    color  : #111f4d ;
+    border-color : transparent;
+
+    
+    
+}
+
+
+.Dropdown
+{
+    position: absolute;
+right : 10px;
+
+background-color : rgb(19,19,19);
+border : 1px solid rgba(151,151,151,0.34);
+border-radius : 4px;
+box-shadow : rgb(0 0 0 /50%) 0 0 18px 0;
+font-size :13px;
+letter-spacing : 2px;
+width : 100px; 
+display : flex;
+opacity : 0;
+flex-direction : column;
+
+
+}
+
+.Dropdown span 
+{
+  padding : 4px 4px !important ;
+}
+
+.namee{
+    position : relative;
+    font-size: 16px;
+    letter-spacing : 2px;
+    padding: 60px;
+}
+
+.SignOut 
+{
+
+position : absolute;
+height : 48px;
+width : 48px;
+cursor : pointer;
+align-items : center;
+justify-content: center;
+
+
+}
+.UserName
+{
+align-items : center;
+display : flex;
+flex-flow : row nowrap;
+height : 100%;
+justify-content : flex-end;
+margin : 0px;
+padding : 0px;
+position : relative;
+margin-right : 10px;
+margin-left : 25px;
+}
+
+
+
+.Dropdown:hover 
+    {
+       
+        
+        opacity : 1;
+        display : block
+     }
+
