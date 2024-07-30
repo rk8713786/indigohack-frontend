@@ -1,74 +1,63 @@
-<<<<<<< HEAD
-# Getting Started with Create React App
+The "Airline Reservation System" has been developed to address the challenges present in the
+existing manual and outdated systems. This software aims to eliminate, and in some cases, reduce the
+difficulties faced by the current reservation processes. The system is designed to meet the needs of
+airlines by streamlining operations and improving efficiency. It ensures a smooth and effective
+management of flight bookings, cancellations, and passenger information. By providing real-time
+updates, secure payment processing, and user-friendly interfaces, this system enhances the overall
+user experience for both customers and airline staff.
+1.3) Project Functionalities
+o Search the available flight: Allows users to search for flights based on specified criteria such as
+date, origin, and destination.
+o Evaluate cost according to the destination: Calculates the ticket price based on the selected
+destination and travel details.
+o Booking of tickets: Facilitates the reservation of seats on selected flights.
+o Printout of tickets: Enables users to print their flight tickets after booking.
+6
+o Cancellation of tickets: Allows users to cancel their booked tickets and request refunds.
+o Providing discount if any: Applies available discounts to eligible bookings during the payment
+process.
+o Login/Logout/Sign Up/Update User Photo: Manages user authentication, registration,
+login/logout, and profile picture updates.
+o User authentication: Ensures secure access to the system by verifying user credentials.
+1.4) Operating Environment
+ Hardware Requirement:
+o Server:
+o Multi-core processor (Quad-core or higher recommended)
+o Sufficient RAM (8 GB or more recommended)
+o Adequate storage space (SSD recommended for better performance)
+ Network Components:
+o Reliable internet connection
+o Network switches and routers for local network connectivity
+ Client Machines:
+o Standard desktops or laptops for users (Minimum requirements: dual-core processor, 4
+GB RAM)
+o Compatible devices for customer interactions (e.g., smartphones, tablets)
+ Software Requirement:
+o Operating System:
+o Server: Linux (e.g., Ubuntu, CentOS) or Windows Server
+o Client: Windows, macOS, or Linux for desktop applications
+o Mobile: Android or iOS for mobile applications
+o NodeJS :
+o JDK 8 or later for Java application development
+ Database Management System (DBMS):
+o NoSQL
+Google Firebase
+7
+ Application Programming Interface (API):
+o Amadeus Travel API
+o Google Firebase
+o Razorpay Payment API
+ Integrated Development Environment (IDE):
+o Visual Studio Code
+o Windows Command Prompt
+ Browser:
+o Google Chrome
+o Microsoft Edge
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
 
-In the project directory, you can run:
+For Alerting Used 
+Nodemailer for Mails
+Firebase for Cloud messaging and notifying
+Twilio for SMS Alerting and informing.
 
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-=======
-# indigohack-frontend
->>>>>>> origin/main
