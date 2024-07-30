@@ -5,7 +5,7 @@ function Footer(props) {
     <div className="component-footer border-top border-secondary">
       <div className="footer-header">
         <h3 className="text-center mt-2">
-          This is a College Major Project Made For Testing Purpose
+          This is a Airlines management System
         </h3>
       </div>
 
@@ -15,7 +15,7 @@ function Footer(props) {
         <div className="col text-center">
           <h4>Github Repositories</h4>
           <p>
-            <a href="https://github.com/Reyder95/Airport-Reservation-FrontEnd">
+            <a href="https://github.com/rk8713786/indigohack-frontend.git">
               Front End (Website Design)
             </a>
           </p>
@@ -26,7 +26,7 @@ function Footer(props) {
         </div>
 
         <div className="col text-center">
-          <h4>College Project </h4>
+          <h4>Case Study</h4>
         </div>
       </div>
     </div>
@@ -34,4 +34,4 @@ function Footer(props) {
 }
 
 export default Footer;
-<h2>I am Footer</h2>;
+

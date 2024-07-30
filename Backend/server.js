@@ -16,23 +16,23 @@ app.use(cors());
 const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: process.env.REACT_APP_USER, // Replace with your email
-    pass: process.env.REACT_APP_PASS   // Replace with your email password
+    user: 'airlinessystem821@gmail.com', // Replace with your email
+    pass: 'kzxs fkwe rhwf vbgd'   // Replace with your email password
   }
 });
 
 // Twilio configuration
-const accountSid = process.env.REACT_APP_ACCOUNT_SID; // Replace with your Twilio Account SID
-const authToken = process.env.REACT_APP_AUTH_TOKEN;   // Replace with your Twilio Auth Token
+const accountSid = 'AC2dab0eebb4483c7509cd9d6244af138c'; // Replace with your Twilio Account SID
+const authToken = 'e77813b665ecd72fba485a1f088ca8c1';   // Replace with your Twilio Auth Token
 const client = twilio(accountSid, authToken);
 
 // Route to send email
 app.post('/send-email', async (req, res) => {
   const { to, subject, text } = req.body;
-console.log(req.body)
+
   try {
     const info = await transporter.sendMail({
-      from: process.env.REACT_APP_USER, // Replace with your email
+      from: 'rjm9871@gmail.com', // Replace with your email
       to:'rk99576@gmail.com',
       subject:"Testing",
       text:"Hello"
@@ -46,13 +46,12 @@ console.log(req.body)
 
 // Route to send SMS
 app.post('/send-sms', async (req, res) => {
-  console.log(req.body)
   const { to, body } = req.body;
-  console.log(req.body)
+
   try {
     const message = await client.messages.create({
       body: "Hi Rahul",
-      from: process.env.REACT_APP_FROM_MOB_NO, // Replace with your Twilio phone number
+      from: '+16187624806', // Replace with your Twilio phone number
       to: '+919911069251'
     });
     res.status(200).send(`Message sent successfully: ${message.sid}`);

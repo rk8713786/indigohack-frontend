@@ -1,7 +1,7 @@
 import { signInWithEmailAndPassword, signInWithPopup } from "@firebase/auth";
 import React, { createContext, useContext, useState, useEffect } from "react";
 
-import axios from 'axios';
+import axios from "axios";
 import amadeus from "../api/amadeus";
 import { auth } from "../firebase";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
@@ -21,9 +21,8 @@ import {
   arrayUnion,
   arrayRemove,
   collection,
-  getDocs
+  getDocs,
 } from "firebase/firestore";
-
 
 const FlightContext = createContext({
   finder: () => Promise,
@@ -254,6 +253,74 @@ export function FlightProvider({ children }) {
     });
   }
 
+  // async function fetchNotifications() {
+  //   const notificationsRef = collection(db, "Notifications");
+  //   const snapshot = await getDocs(notificationsRef);
+  //   const notifications = snapshot.docs.map((doc) => ({
+  //     id: doc.id,
+  //     ...doc.data(),
+  //   }));
+
+  //   // Process each notification
+  //   for (const notification of notifications) {
+  //     // Check if status is 'done'; skip if it is
+  //     if (notification.status === "done") {
+  //       console.log(
+  //         `Notification ${notification.id} has already been processed.`
+  //       );
+  //       continue;
+  //     }
+
+  //     try {
+  //       // Trigger the appropriate notification based on the method field
+  //       if (notification.method === "SMS") {
+  //         await sendSMSNotification(notification);
+  //       } else if (notification.method === "mail") {
+  //         await sendEmailNotification(notification);
+  //       }
+
+  //       // Add status field as 'done' after sending
+        
+  //     } catch (error) {
+  //       console.error("Error processing notification:", error);
+  //     }
+  //   }
+
+  //   // Optionally set notifications to state
+  //   localStorage.setItem("notifications", JSON.stringify(notifications));
+  //   let obj = JSON.parse(localStorage.getItem("notifications"));
+  //   setMsgData(obj);
+  //   setLoaded(false);
+  // }
+
+  // async function sendEmailNotification(notification) {
+  //   try {
+  //     await axios.post("http://localhost:3001/send-email", notification);
+  //     await addNotificationStatus(notification.id, "done");
+  //   } catch (error) {
+  //     console.error("Error sending email:", error);
+  //   }
+  // }
+
+  // async function sendSMSNotification(notification) {
+  //   try {
+  //     await axios.post("http://localhost:3001/send-sms", notification);
+  //     await addNotificationStatus(notification.id, "done");
+  //   } catch (error) {
+  //     console.error("Error sending SMS:", error);
+  //   }
+  // }
+
+  // async function addNotificationStatus(notificationId, status) {
+  //   const notificationRef = doc(db, "Notifications", notificationId);
+  //   try {
+  //     await updateDoc(notificationRef, { status });
+      
+  //   } catch (error) {
+  //     console.error("Error adding notification status:", error);
+  //   }
+  // }
+
   async function fetchNotifications() {
     const notificationsRef = collection(db, "Notifications");
     const snapshot = await getDocs(notificationsRef);
@@ -293,6 +360,7 @@ export function FlightProvider({ children }) {
       console.error('Error sending SMS:', error);
     }
   }
+
 
   useEffect(() => {
     localStorage.setItem("index", JSON.stringify(index));
@@ -345,7 +413,7 @@ export function FlightProvider({ children }) {
     random,
     paymentDone,
     setPaymentDone,
-    fetchNotifications // Add the new function here
+    fetchNotifications, // Add the new function here
   };
 
   return (
@@ -354,3 +422,4 @@ export function FlightProvider({ children }) {
     </FlightContext.Provider>
   );
 }
+
