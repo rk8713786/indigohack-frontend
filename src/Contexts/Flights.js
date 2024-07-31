@@ -253,113 +253,113 @@ export function FlightProvider({ children }) {
     });
   }
 
-  // async function fetchNotifications() {
-  //   const notificationsRef = collection(db, "Notifications");
-  //   const snapshot = await getDocs(notificationsRef);
-  //   const notifications = snapshot.docs.map((doc) => ({
-  //     id: doc.id,
-  //     ...doc.data(),
-  //   }));
-
-  //   // Process each notification
-  //   for (const notification of notifications) {
-  //     // Check if status is 'done'; skip if it is
-  //     if (notification.status === "done") {
-  //       console.log(
-  //         `Notification ${notification.id} has already been processed.`
-  //       );
-  //       continue;
-  //     }
-
-  //     try {
-  //       // Trigger the appropriate notification based on the method field
-  //       if (notification.method === "SMS") {
-  //         await sendSMSNotification(notification);
-  //       } else if (notification.method === "mail") {
-  //         await sendEmailNotification(notification);
-  //       }
-
-  //       // Add status field as 'done' after sending
-        
-  //     } catch (error) {
-  //       console.error("Error processing notification:", error);
-  //     }
-  //   }
-
-  //   // Optionally set notifications to state
-  //   localStorage.setItem("notifications", JSON.stringify(notifications));
-  //   let obj = JSON.parse(localStorage.getItem("notifications"));
-  //   setMsgData(obj);
-  //   setLoaded(false);
-  // }
-
-  // async function sendEmailNotification(notification) {
-  //   try {
-  //     await axios.post("http://localhost:3001/send-email", notification);
-  //     await addNotificationStatus(notification.id, "done");
-  //   } catch (error) {
-  //     console.error("Error sending email:", error);
-  //   }
-  // }
-
-  // async function sendSMSNotification(notification) {
-  //   try {
-  //     await axios.post("http://localhost:3001/send-sms", notification);
-  //     await addNotificationStatus(notification.id, "done");
-  //   } catch (error) {
-  //     console.error("Error sending SMS:", error);
-  //   }
-  // }
-
-  // async function addNotificationStatus(notificationId, status) {
-  //   const notificationRef = doc(db, "Notifications", notificationId);
-  //   try {
-  //     await updateDoc(notificationRef, { status });
-      
-  //   } catch (error) {
-  //     console.error("Error adding notification status:", error);
-  //   }
-  // }
-
   async function fetchNotifications() {
     const notificationsRef = collection(db, "Notifications");
     const snapshot = await getDocs(notificationsRef);
-    const notifications = snapshot.docs.map(doc => doc.data());
+    const notifications = snapshot.docs.map((doc) => ({
+      id: doc.id,
+      ...doc.data(),
+    }));
 
-    if (notifications) {
-    {
-        localStorage.setItem("notifications", JSON.stringify(notifications));
-        let obj = JSON.parse(localStorage.getItem("notifications"));
-        setMsgData(obj);
-        setLoaded(false);
-      };
+    // Process each notification
+    for (const notification of notifications) {
+      // Check if status is 'done'; skip if it is
+      if (notification.status === "done") {
+        console.log(
+          `Notification ${notification.id} has already been processed.`
+        );
+        continue;
+      }
+
+      try {
+        // Trigger the appropriate notification based on the method field
+        if (notification.method === "SMS") {
+          await sendSMSNotification(notification);
+        } else if (notification.method === "Email") {
+          await sendEmailNotification(notification);
+        }
+
+        // Add status field as 'done' after sending
+        
+      } catch (error) {
+        console.error("Error processing notification:", error);
+      }
     }
-    // You can also set these notifications to state if needed
-    // setNotifications(notifications);
+
+    // Optionally set notifications to state
+    localStorage.setItem("notifications", JSON.stringify(notifications));
+    let obj = JSON.parse(localStorage.getItem("notifications"));
+    setMsgData(obj);
+    setLoaded(false);
+  }
+
+  async function sendEmailNotification(notification) {
+    try {
+      await axios.post("http://localhost:3001/send-email", notification);
+      await addNotificationStatus(notification.id, "done");
+    } catch (error) {
+      console.error("Error sending email:", error);
+    }
+  }
+
+  async function sendSMSNotification(notification) {
+    try {
+      await axios.post("http://localhost:3001/send-sms", notification);
+      await addNotificationStatus(notification.id, "done");
+    } catch (error) {
+      console.error("Error sending SMS:", error);
+    }
+  }
+
+  async function addNotificationStatus(notificationId, status) {
+    const notificationRef = doc(db, "Notifications", notificationId);
+    try {
+      await updateDoc(notificationRef, { status });
+      
+    } catch (error) {
+      console.error("Error adding notification status:", error);
+    }
+  }
+
+  // async function fetchNotifications() {
+  //   const notificationsRef = collection(db, "Notifications");
+  //   const snapshot = await getDocs(notificationsRef);
+  //   const notifications = snapshot.docs.map(doc => doc.data());
+
+  //   if (notifications) {
+  //   {
+  //       localStorage.setItem("notifications", JSON.stringify(notifications));
+  //       let obj = JSON.parse(localStorage.getItem("notifications"));
+  //       setMsgData(obj);
+  //       setLoaded(false);
+  //     };
+  //   }
+  //   // You can also set these notifications to state if needed
+  //   // setNotifications(notifications);
 
   
-    sendEmailNotification(notifications)
-    sendSMSNotification(notifications)
+  //   sendEmailNotification(notifications)
+  //   sendSMSNotification(notifications)
 
-  }
+  // }
 
-  async function sendEmailNotification(msgData) {
-    try {
-      const response = await axios.post('http://localhost:3001/send-email', msgData);
-    } catch (error) {
-      console.error('Error sending email:', error);
-    }
-  }
+  // async function sendEmailNotification(msgData) {
+  //   try {
+  //     const response = await axios.post('http://localhost:3001/send-email', msgData);
+  //   } catch (error) {
+  //     console.error('Error sending email:', error);
+  //   }
+  // }
   
-  // Send SMS
-  async function sendSMSNotification(msgData) {
-    try {
-      const response = await axios.post('http://localhost:3001/send-sms', msgData);
-      console.log(msgData)
-    } catch (error) {
-      console.error('Error sending SMS:', error);
-    }
-  }
+  // // Send SMS
+  // async function sendSMSNotification(msgData) {
+  //   try {
+  //     const response = await axios.post('http://localhost:3001/send-sms', msgData);
+  //     console.log(msgData)
+  //   } catch (error) {
+  //     console.error('Error sending SMS:', error);
+  //   }
+  // }
 
 
   useEffect(() => {

@@ -3,7 +3,7 @@ const nodemailer = require('nodemailer');
 const twilio = require('twilio');
 const bodyParser = require('body-parser');
 const cors = require('cors');
-const dotenv = require('dotenv').config();
+require('dotenv').config();
 
 
 const app = express();
@@ -23,20 +23,23 @@ const transporter = nodemailer.createTransport({
 });
 
 // Twilio configuration
-const accountSid = process.env.REACT_APP_ACCOUNT_SID; // Replace with your Twilio Account SID
-const authToken = process.env.REACT_APP_AUTH_TOKEN;   // Replace with your Twilio Auth Token
+const accountSid = process.env.TWILIO_ACCOUNT_SID; 
+console.log(accountSid);// Replace with your Twilio Account SID
+const authToken = process.env.TWILIO_AUTH_TOKEN;   // Replace with your Twilio Auth Token
 const client = twilio(accountSid, authToken);
 
 // Route to send email
 app.post('/send-email', async (req, res) => {
-  const { to, subject, text } = req.body;
+
+  const to = req.body.recipient;
+  const text = "Dear Customer\n"+ req.body.message;
 console.log(req.body)
   try {
     const info = await transporter.sendMail({
       from: process.env.REACT_APP_USER, // Replace with your email
-      to:'rk99576@gmail.com',
-      subject:"Testing",
-      text:"Hello"
+      to:to,
+      subject:"Flight Update",
+      text:text
     });
     res.status(200).send(`Email sent successfully: ${info.messageId}`);
   } catch (error) {
@@ -48,13 +51,14 @@ console.log(req.body)
 // Route to send SMS
 app.post('/send-sms', async (req, res) => {
   console.log(req.body)
-  const { to, body } = req.body;
-  console.log(req.body)
+  const to = req.body.recipient;
+  const body = "Dear Customer\n"+ req.body.message;
+  console.log(to);
   try {
     const message = await client.messages.create({
-      body: "Hi Rahul",
+      body: body,
       from: process.env.REACT_APP_FROM_MOB_NO, // Replace with your Twilio phone number
-      to: '+919911069251'
+      to:to
     });
     res.status(200).send(`Message sent successfully: ${message.sid}`);
   } catch (error) {
