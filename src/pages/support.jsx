@@ -3,7 +3,9 @@ import React from "react";
 function support() {
   return (
     <div>
-      <h2 className="display-4 text-primary text-center mt-5">Customer Support</h2>
+      <h2 className="display-4 text-primary text-center mt-5">
+        Customer Support
+      </h2>
       <hr className="border-secondary" />
       <p>
         <p>

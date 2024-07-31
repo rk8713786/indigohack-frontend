@@ -13,9 +13,8 @@ function FlightCheckin(props) {
           <h2 className="display-4 text-primary text-center mt-5">
             My Bookings
           </h2>
-          
+
           {currentUser.MyBookings.map((MyBooking, key) => (
-         
             <div key={key} data-tag={key}>
               <BookingCard
                 airLine={MyBooking[0].airlineName}
@@ -31,7 +30,8 @@ function FlightCheckin(props) {
                   16
                 )}
                 origin={
-                  MyBooking[2].avlblDetails.itineraries[0].segments[0].departure.iataCode
+                  MyBooking[2].avlblDetails.itineraries[0].segments[0].departure
+                    .iataCode
                 }
                 flightNo={
                   MyBooking[2].avlblDetails.itineraries[0].segments[0].number +
@@ -50,7 +50,7 @@ function FlightCheckin(props) {
                 ].arrival.at.substring(0, 10)}
                 price={MyBooking[2].avlblDetails.price.base}
               />
-            </div> 
+            </div>
           ))}
         </div>
       </div>

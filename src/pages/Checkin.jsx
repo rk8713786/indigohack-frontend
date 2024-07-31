@@ -11,7 +11,9 @@ const Checkin = React.forwardRef((props, ref) => {
   console.log(keyIndex);
   var array = currentUser.MyBookings[keyIndex];
   setNewArray(array);
-  console.log(array[2].avlblDetails.travelerPricings[0].fareDetailsBySegment[0].cabin);
+  console.log(
+    array[2].avlblDetails.travelerPricings[0].fareDetailsBySegment[0].cabin
+  );
   const history = useHistory();
   function printReceipt() {
     window.print();
@@ -33,7 +35,8 @@ const Checkin = React.forwardRef((props, ref) => {
             <TicketCard
               airLine={array[3].airlineName}
               cabin={
-                array[2].avlblDetails.travelerPricings[0].fareDetailsBySegment[0].cabin
+                array[2].avlblDetails.travelerPricings[0]
+                  .fareDetailsBySegment[0].cabin
               }
               name={passenger.tName}
               date={array[2].avlblDetails.itineraries[0].segments[0].departure.at.substring(
@@ -44,7 +47,10 @@ const Checkin = React.forwardRef((props, ref) => {
                 11,
                 16
               )}
-              origin={array[2].avlblDetails.itineraries[0].segments[0].departure.iataCode}
+              origin={
+                array[2].avlblDetails.itineraries[0].segments[0].departure
+                  .iataCode
+              }
               flightNo={
                 array[2].avlblDetails.itineraries[0].segments[0].number +
                 array[2].avlblDetails.validatingAirlineCodes[0]
@@ -56,7 +62,10 @@ const Checkin = React.forwardRef((props, ref) => {
                 ].arrival.iataCode
               }
               boardingTime="10:30"
-              gateNo={array[2].avlblDetails.itineraries[0].segments[0].departure.terminal}
+              gateNo={
+                array[2].avlblDetails.itineraries[0].segments[0].departure
+                  .terminal
+              }
             />
           </div>
         ))}

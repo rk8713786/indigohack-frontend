@@ -53,7 +53,6 @@ function FlightCheckin(props) {
     <div className="component-filght-list">
       <div className="main-slist mt-5">
         <div className="flight-list-header rounded ">
-        
           <SelectedCard
             depart={info.Origin}
             via={avlbls[index].itineraries[0].segments[0].arrival.iataCode}
@@ -141,27 +140,27 @@ function FlightCheckin(props) {
                     </Form.Select>
                     <Form.Group id="DateOfBirth">
                       <Form.Label>Date Of Birth</Form.Label>
-                     <Form.Control
-  type="date"
-  onChange={(e) => {
-    const selectedDate = new Date(e.target.value);
-    const currentDate = new Date();
-    if (selectedDate <= currentDate) {
-      setTraveller({ ...traveller, tBirthday: e.target.value,
-        tAge: CalculateAge(e.target.value), });
-    } else {
-      alert("Date of Birth cannot be in the future");
-    }
-  }}
-  required
-/>
+                      <Form.Control
+                        type="date"
+                        onChange={(e) => {
+                          const selectedDate = new Date(e.target.value);
+                          const currentDate = new Date();
+                          if (selectedDate <= currentDate) {
+                            setTraveller({
+                              ...traveller,
+                              tBirthday: e.target.value,
+                              tAge: CalculateAge(e.target.value),
+                            });
+                          } else {
+                            alert("Date of Birth cannot be in the future");
+                          }
+                        }}
+                        required
+                      />
                     </Form.Group>
                     <Form.Group id="Age">
                       <Form.Label>Age</Form.Label>
-                      <Form.Control
-                        value={traveller.tAge}
-                        readOnly={true}
-                      />
+                      <Form.Control value={traveller.tAge} readOnly={true} />
                     </Form.Group>
                     <Form.Group id="Mobile">
                       <Form.Label>Mobile No.</Form.Label>
@@ -202,7 +201,12 @@ function FlightCheckin(props) {
                     <Button className="w-50 mt-5" type="submit">
                       Submit
                     </Button>
-                    <Button className="w-50 mt-5" variant="secondary" type="submit" onClick={() => setShowForm(false)}>
+                    <Button
+                      className="w-50 mt-5"
+                      variant="secondary"
+                      type="submit"
+                      onClick={() => setShowForm(false)}
+                    >
                       Cancel
                     </Button>
                   </Form>
@@ -214,13 +218,15 @@ function FlightCheckin(props) {
           <Button
             className="w-100 mt-5"
             type="submit"
-            onClick={() => (passengers.length!==0)?setConfirm(true):
-              alert("Add Travellers First")}
+            onClick={() =>
+              passengers.length !== 0
+                ? setConfirm(true)
+                : alert("Add Travellers First")
+            }
           >
             Book Flight
           </Button>
 
-          
           {confirm ? (
             <>
               <Modal
@@ -290,7 +296,7 @@ function FlightCheckin(props) {
                   </Table>
                 </Modal.Body>
                 <Modal.Footer>
-                  <Button  variant="secondary" onClick={() => setConfirm(false)}>
+                  <Button variant="secondary" onClick={() => setConfirm(false)}>
                     Cancel
                   </Button>
 

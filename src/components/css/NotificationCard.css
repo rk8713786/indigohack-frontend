@@ -1,0 +1,19 @@
+/* src/components/css/NotificationCard.css */
+.notification-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 8px 0;
+    background-color: #f9f9f9;
+  }
+  
+  /* src/pages/css/NotificationPage.css */
+  .notification-page {
+    padding: 20px;
+  }
+  
+  .notification-list {
+    display: flex;
+    flex-direction: column;
+  }
+  

@@ -12,7 +12,7 @@ function TravellerForm(props) {
   });
 
   return (
-    <div>   
+    <div>
       <Card>
         <Card.Body>
           <Form>
@@ -29,18 +29,18 @@ function TravellerForm(props) {
             <Form.Group id="DateOfBirth">
               <Form.Label>Date Of Birth</Form.Label>
               <Form.Control
-  type="date"
-  onChange={(e) => {
-    const selectedDate = new Date(e.target.value);
-    const currentDate = new Date();
-    if (selectedDate <= currentDate) {
-      setTraveller({ ...traveller, tBirthday: e.target.value });
-    } else {
-      alert("Date of Birth cannot be in the future");
-    }
-  }}
-  required
-/>
+                type="date"
+                onChange={(e) => {
+                  const selectedDate = new Date(e.target.value);
+                  const currentDate = new Date();
+                  if (selectedDate <= currentDate) {
+                    setTraveller({ ...traveller, tBirthday: e.target.value });
+                  } else {
+                    alert("Date of Birth cannot be in the future");
+                  }
+                }}
+                required
+              />
             </Form.Group>
             <Form.Group id="Age">
               <Form.Label>Age</Form.Label>

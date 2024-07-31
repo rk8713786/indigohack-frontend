@@ -1,5 +1,6 @@
 import React from "react";
 import HomeIcon from "@material-ui/icons/Home";
+import NotificationsIcon from '@material-ui/icons/Notifications';
 import SearchIcon from "@material-ui/icons/Search";
 import ContactSupportIcon from "@material-ui/icons/ContactSupport";
 import AccountCircle from "@material-ui/icons/AccountCircle";
@@ -27,6 +28,19 @@ const Header = (props) => {
           <SearchIcon className="icons" style={{ color: "#1B1464" }} />
           <span>SEARCH</span>
         </a> */}
+        {currentUser.displayName ? (
+          <div>
+            <a href="Notifications">
+              <NotificationsIcon
+                className="icons"
+                style={{ color: "#1B1464" }}
+              />
+              <span>NOTIFICATIONS</span>
+            </a>
+          </div>
+        ) : (
+          <div></div>
+        )}
         <a href="/support">
           <ContactSupportIcon className="icons" style={{ color: "#1B1464" }} />
           <span>CUSTOMER SUPPORT</span>
@@ -39,63 +53,59 @@ const Header = (props) => {
 
       {location.pathname === "/Login" ? null : currentUser ? (
         <div className="UserName">
-          <span className="namee">
-          {currentUser.displayName}
-          </span>
-        <div className="SignOut D">
-          
-          <div className="">
-          
-            {currentUser.photoURL ? (
-              <Avatar
-                src={currentUser.photoURL}
-                style={{ height: "100%", width: "100%", borderRadius: "50%" }}
-                alt="Photo"
-              />
-            ) : (
-              <AccountCircle
-                className="Dvisible"
-                style={{ fontSize: 55, color: "#1B1464" }}
-              />
-            )}
-          </div>
+          <span className="namee">{currentUser.displayName}</span>
+          <div className="SignOut D">
+            <div className="">
+              {currentUser.photoURL ? (
+                <Avatar
+                  src={currentUser.photoURL}
+                  style={{ height: "100%", width: "100%", borderRadius: "50%" }}
+                  alt="Photo"
+                />
+              ) : (
+                <AccountCircle
+                  className="Dvisible"
+                  style={{ fontSize: 55, color: "#1B1464" }}
+                />
+              )}
+            </div>
 
-          <div className="Dropdown Dvisible">
-            {location.pathname === "/Profile" ? null : (
-              <div className="">
-                <Link
-                  to="/Profile"
-                  style={{ textDecoration: "none", color: "white" }}
-                >
-                  <span>My Profile</span>
-                </Link>
+            <div className="Dropdown Dvisible">
+              {location.pathname === "/Profile" ? null : (
+                <div className="">
+                  <Link
+                    to="/Profile"
+                    style={{ textDecoration: "none", color: "white" }}
+                  >
+                    <span>My Profile</span>
+                  </Link>
 
-                <div>
-                  <hr
-                    style={{
-                      color: "#FFA900",
-                      backgroundColor: "white",
-                      height: 0.7,
-                      borderColor: "#FFA900",
-                      borderRadius: "3px",
-                    }}
-                  />
+                  <div>
+                    <hr
+                      style={{
+                        color: "#FFA900",
+                        backgroundColor: "white",
+                        height: 0.7,
+                        borderColor: "#FFA900",
+                        borderRadius: "3px",
+                      }}
+                    />
+                  </div>
                 </div>
-              </div>
-            )}
-            <span
-              onClick={async (e) => {
-                e.preventDefault();
-                logOut();
-                localStorage.clear();
+              )}
+              <span
+                onClick={async (e) => {
+                  e.preventDefault();
+                  logOut();
+                  localStorage.clear();
 
-                alert("logout user");
-              }}
-            >
-              Sign out
-            </span>
+                  alert("logout user");
+                }}
+              >
+                Sign out
+              </span>
+            </div>
           </div>
-        </div>
         </div>
       ) : (
         <Link to="/Login" style={{ textDecoration: "none" }}>

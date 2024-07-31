@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useHistory, Link } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { Alert, Card, Form, Button, Container } from "react-bootstrap";
 import { useFlight } from "../Contexts/Flights";
 import "./css/Login.css";
@@ -11,7 +11,7 @@ function SignUp() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [birthday, setBirthday] = useState("");
-  const [phone,setPhone]=useState("");
+  const [phone, setPhone] = useState("");
   const [confPassword, setConfPassword] = useState("");
   const [error, setError] = useState("");
   const [gender, setGender] = useState("");
@@ -41,16 +41,12 @@ function SignUp() {
                     }
                     setError("");
 
-                    signUp(email, password, birthday, name,phone,gender)
+                    signUp(email, password, birthday, name, phone, gender)
                       .then((response) => history.push("/Profile"))
                       .catch((error) => {
                         setError(error.message);
-
-                        
                       });
-                     
-                  }
-                     }
+                  }}
                 >
                   <Form.Group id="name">
                     <Form.Label>Name</Form.Label>
@@ -62,20 +58,18 @@ function SignUp() {
                   </Form.Group>
                   <Form.Label>Gender</Form.Label>
 
-                    <Form.Select
-                      value={gender}
-                      aria-label="Default select example"
-                      onChange={(e) =>
-                        setGender(e.target.value)
-                      }
-                    >
-                      <option disabled value="">
-                        Select Gender
-                      </option>
-                      <option value="MALE">MALE</option>
-                      <option value="FEMALE">FEMALE</option>
-                      <option value="OTHER">OTHER</option>
-                    </Form.Select>
+                  <Form.Select
+                    value={gender}
+                    aria-label="Default select example"
+                    onChange={(e) => setGender(e.target.value)}
+                  >
+                    <option disabled value="">
+                      Select Gender
+                    </option>
+                    <option value="MALE">MALE</option>
+                    <option value="FEMALE">FEMALE</option>
+                    <option value="OTHER">OTHER</option>
+                  </Form.Select>
                   <Form.Group id="DateOfBirth">
                     <Form.Label>Date Of Birth</Form.Label>
                     <Form.Control
@@ -116,7 +110,11 @@ function SignUp() {
                       required
                     />
                   </Form.Group>
-                  <Button className="w-100 mt-4" type="submit" disabled={loading}>
+                  <Button
+                    className="w-100 mt-4"
+                    type="submit"
+                    disabled={loading}
+                  >
                     Sign Up
                   </Button>
                 </Form>

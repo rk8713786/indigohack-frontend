@@ -1,6 +1,11 @@
 import React from "react";
 import "./pages/css/global.css";
-import { BrowserRouter as Router, Switch, Route,Redirect} from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Redirect,
+} from "react-router-dom";
 import Home from "./pages/home";
 import flightList from "./pages/flightList";
 import FlightCheckin from "./pages/flightCheckin";
@@ -14,10 +19,10 @@ import Booked from "./pages/Booked";
 import MyBookings from "./pages/MyBookings";
 import Checkin from "./pages/Checkin";
 import Cancelled from "./pages/Cancelled";
-import About from "./pages/About"
+import About from "./pages/About";
 import support from "./pages/support";
-import Notifff from "./pages/Notifff.jsx"
-import NotificationsComponent from "./components/NotificationsComponent.jsx";
+
+import NotificationPage from "./pages/NotificationPage.jsx";
 
 function App() {
   return (
@@ -28,12 +33,17 @@ function App() {
         <Switch>
           <Route exact path="/" component={Home} />
           <Route exact path="/flightlist" component={flightList} />
-          <Route exact path="/Notifications" component={NotificationsComponent}/>
+
           <Route exact path="/Login" component={Login} />
           <Route exact path="/SignUp" component={SignUp} />
           <Route exact path="/Payment" component={PayByRazorPay} />
           <Route exact path="/About" component={About} />
           <Route exact path="/support" component={support} />
+          <PrivateRoute
+            exact
+            path="/Notifications"
+            component={NotificationPage}
+          />
           <PrivateRoute exact path="/Profile" component={Profile} />
           <PrivateRoute exact path="/flightCheckin" component={FlightCheckin} />
           <PrivateRoute exact path="/Booked" component={Booked} />

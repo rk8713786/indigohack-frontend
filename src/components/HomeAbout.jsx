@@ -17,7 +17,7 @@ function HomeAbout(props) {
 
           <div className="col-sm order-1 order-md-2">
             <img
-              src="https://www.business.com/images/content/5e2/6ff7d9c658afb418b456a/1500-0-"
+              src="https://images.unsplash.com/photo-1543360458-36fada9295c1?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Work Team"
             />
           </div>
@@ -26,7 +26,7 @@ function HomeAbout(props) {
         <div className="row">
           <div className="col-sm">
             <img
-              src="https://www.delphix.com/sites/default/files/styles/1920x1080/public/2017-10/data-featured-image-1.jpg?itok=uT8Y2sMB"
+              src="https://images.unsplash.com/photo-1698595626973-8e5e8fb462e6?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Data World"
             />
           </div>
@@ -55,7 +55,7 @@ function HomeAbout(props) {
 
           <div className="col-sm order-1 order-md-2">
             <img
-              src="https://www.rd.com/wp-content/uploads/2020/01/GettyImages-1131335393-e1580493890249-scaled.jpg"
+              src="https://plus.unsplash.com/premium_photo-1682142193421-fb1b1a96fc78?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTA5fHxBaXJsaW5lcyUyMGltYWdlc3xlbnwwfHwwfHx8MA%3D%3D"
               alt="Work Team"
             />
           </div>
